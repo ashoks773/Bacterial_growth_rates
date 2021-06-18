@@ -53,7 +53,7 @@ cat *_2.fastq.gz > allsample_2.fastq.gz
 ~/Softwares/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -1 allsample_1.fastq.gz -2 allsample_2.fastq.gz -m 100000000000 -o MEGAHIT_assembly -t 120
 ``` 
 
-# Step2: Alignmnet of reads on assembled contigs
+## Step2: Alignmnet of reads on assembled contigs
 This step includes indexing of contigs files, followed by mapping of reads to generate sam and bam files which needs to be sorted and indexed to be used for other packages such as MetaBAT2 and MaxBin (for construction of MAGs) and DEMIC (to calculate Bacterial growth rates)
 ``` r
 bowtie2-build MEGAHIT_assembly/final.contigs.fa MEGAHIT_assembly/final.contigs.fa
@@ -70,9 +70,9 @@ do
   samtools view -h SAM/${SAMPLE}_sort.bam > SAM/${SAMPLE}_sort.sam #--We need sorted sam files - to run DEMIC in step4
 done
 ```
-# Step3: Binning- Construction of MAGs
+## Step3: Binning- Construction of MAGs
 For binning we mainly need Two type of files. 1) contigs file, and 2) contig abundances which can be obtained from mapped bam/sam files generated in previous step.
-## Step3.1 - Using MaxBin2
+### Step3.1 - Using MaxBin2
 ``` r
 module load java/1.8.0_221
 mkdir Abundance # Make a folder name Abundace to store contigs abundance information
@@ -90,14 +90,14 @@ perl ~/Softwares/MaxBin-2.2.7/run_MaxBin.pl -contig MEGAHIT_assembly/final.conti
 mkdir Maxbin_bin
 mv myout* Maxbin_bin/
 ```
-## Step3.2 - Using MetaBAT2
+### Step3.2 - Using MetaBAT2
 ``` r
 mkdir Metabat_bin
 module load metabat/2.12.1 
 jgi_summarize_bam_contig_depths SAM/*bam --outputDepth depth.txt 
 metabat2 -i MEGAHIT_assembly/final.contigs.fa -a depth.txt -o Metabat_bin/bins_dir
 ```
-## Step3.3 - Check qaulity of bins and taxonomic assignments Using CheckM
+### Step3.3 - Check qaulity of bins and taxonomic assignments Using CheckM
 Qaulity of bins to know the % completeness, % contamination, taxnomomic assignments using lineage specific marker genes can be done suing CheckM
 **Load Modules**
 ``` r
@@ -134,7 +134,7 @@ Run CheckM to check the quality of MaxBin Bins
 After running CheckM we will have lot of information about Bins quality and their taxonomic affiliations.
 Still there are some other methods for Binning method comparisons and/or taxonomic assignment. We will try those methods before selecting the bins (reconstructed Genomes) to be used for growth rate calculations.
 
-## Step3.4 (Optional) - Integrate results from Different binning methods to generate non-redundant set of bins using DAS_tools
+### Step3.4 (Optional) - Integrate results from Different binning methods to generate non-redundant set of bins using DAS_tools
 #https://github.com/cmks/DAS_Tool Check here for more details
 ``` r
 mkdir DAS_tools
@@ -153,7 +153,7 @@ These two files needs to be formated first column should be scaffold name and se
               -c DAS_tools/contigs_formatDastools.fa
               -o DAS_tools/DASToolRun1
 ```
-## Step3.5 (Optional) - taxonomic classification of contigs and metagenome assembled genomes (MAGs/bins) using CAT and BAT.
+### Step3.5 (Optional) - taxonomic classification of contigs and metagenome assembled genomes (MAGs/bins) using CAT and BAT.
 #https://github.com/dutilh/CAT # Visit this site for more details
 ``` r
 cd ~/Databases
@@ -162,7 +162,7 @@ tar -zxvf CAT_prepare_20210107.tar.gz
 ```
 **Note: This Taxonomic assignment tutorial using CAT and BAT is still under preparation. However, as I have mentioned, Step 3.4 and 3.5 are completely optional. Selected bins (genomes) obtained after Step3.3 can be used for the final Step that is "Bacterial Growth Rate Calculation".**
 
-# Step4: Use DEMIC to calculate Bacterial Growth Rates - ** Final Step **
+## Step4: Use DEMIC to calculate Bacterial Growth Rates - ** Final Step **
 https://sourceforge.net/projects/demic/ # Check this for installation and detailed usase
 DEMIC need two folders as input: One which contains Sorted sam files (we have generated this in Step2), Second folder should be constructed bins directory it can Metabat_bin or Maxbin_bin or any directly which contains high quality and non-redundant bins. This can be decided after running CheckM or DAS tools
 ``` r
