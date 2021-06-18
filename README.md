@@ -1,4 +1,4 @@
-# Bacterial_growth_rates
+# Bacterial growth rate calculation 
 Computational pipeline to calculate bacterial growth rates from metagenomic samples.
 By: Ashok K. Sharma; June 18th, 2021;
 
