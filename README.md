@@ -160,7 +160,7 @@ cd ~/Databases
 wget tbb.bio.uu.nl/bastiaan/CAT_prepare/CAT_prepare_20210107.tar.gz
 tar -zxvf CAT_prepare_20210107.tar.gz
 ```
-**Note: Taxonomic assignment using CAT and BAT is still under process. However, as I have mentioned Step 3.4 and 3.5 are completely optional. Selected bins (genomes) obtained after Step3.3 can be used for the final Step which is "Bacterial Growth Rate Calculation".**
+**Note: This Taxonomic assignment tutorial using CAT and BAT is still under preparation. However, as I have mentioned, Step 3.4 and 3.5 are completely optional. Selected bins (genomes) obtained after Step3.3 can be used for the final Step that is "Bacterial Growth Rate Calculation".**
 
 # Step4: Use DEMIC to calculate Bacterial Growth Rates - ** Final Step **
 https://sourceforge.net/projects/demic/ # Check this for installation and detailed usase
