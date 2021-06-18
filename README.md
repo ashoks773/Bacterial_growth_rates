@@ -24,8 +24,12 @@ Any questions about this pipeline please mail to *ashoks773@gmail.com*
   
   ## Step1: Co-assembly
   Before running this step raw metagenomic reads need to be process for **1.Qaulity filtering: Using Trimmomatic** and **2. Host contamination removal: using  Bowtie2 and Samtools**. Or kneaddata https://huttenhower.sph.harvard.edu/kneaddata/ can be used for this purpose. Kneaddata can be run using the follwoing command. 
- kneaddata --input ${SAMPLE}_1.fastq.gz --input ${SAMPLE}_2.fastq.gz -db /home/sharmaa4/Databases/Human_Genome/human_GRCh38.p13 --output /home/sharmaa4/IBD_datasets/HMP2/step1_WGS_rawReads_QC/${SAMPLE}_kneaddata_output --bypass-trf
-  
+``` r
+kneaddata --input ${SAMPLE}_1.fastq.gz --input ${SAMPLE}_2.fastq.gz -db /home/sharmaa4/Databases/Human_Genome/human_GRCh38.p13 --output /home/sharmaa4/IBD_datasets/HMP2/step1_WGS_rawReads_QC/${SAMPLE}_kneaddata_output --bypass-trf
+```
+Output of kneaddata: will generate multiple files. We need to use these four files: **paired_1.fastq, paired_2.fastq, unmatched_1.fastq, unmatched_2.fastq**. 
+
+**We are starting from here:** For this tutorial, I have kept quality filtered paired end reads in Samples directory. We have total 20 files for 10 Samples. This directly will be used for downstream processing.
 ``` r
 module load bowtie/2.3.2
 module load samtools/1.9
