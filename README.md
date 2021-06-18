@@ -24,7 +24,7 @@ Any questions about this pipeline please mail to *ashoks773@gmail.com*
   *  **Java:** https://docs.oracle.com/en/java/javase/11/install/installation-jdk-linux-platforms.html#GUID-737A84E4-2EFF-4D38-8E60-3E29D1B884B8
   *  **Perl:** https://www.perl.org/get.html
   
-  ## Step1: Co-assembly: to generate contigs/scaffolds using MEGAHIT
+## Step1: Co-assembly: to generate contigs/scaffolds using MEGAHIT
   Before running this step, raw metagenomic reads need to be processed for **1.Qaulity filtering: Using Trimmomatic** and **2. Host contamination removal: using  Bowtie2 and Samtools**. Or kneaddata https://huttenhower.sph.harvard.edu/kneaddata/ can be used for this purpose. Kneaddata can be run using the following command. 
 ``` r
 kneaddata --input ${SAMPLE}_1.fastq.gz --input ${SAMPLE}_2.fastq.gz -db /home/sharmaa4/Databases/Human_Genome/human_GRCh38.p13 --output /home/sharmaa4/IBD_datasets/HMP2/step1_WGS_rawReads_QC/${SAMPLE}_kneaddata_output --bypass-trf
