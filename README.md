@@ -42,7 +42,9 @@ cat ${SAMPLE}_paired_2.fastq ${SAMPLE}_unmatched_2.fastq > ${SAMPLE}_2.fastq
 gzip *fastq
 ```
 
-**We are starting from here:** For this tutorial, quality filtered paired end reads (_1.fastq.gz and _2.fastq.gz_) will be used. We have total 20 fastq.gz files for 10 Samples. This directly will be used for downstream processing.
+**We are starting from here:** For this tutorial, quality filtered paired end reads (_1.fastq.gz and _2.fastq.gz_) will be used. We have total 20 fastq.gz files for 10 Samples. This directly will be used for downstream processing. **Note:** Limited size can be uploaded to GitHub and therefore very less number of reads (50,000 reads/sample) were uploaded. This might give the error while running the **Binning** steps and you might end up with Zero bins. So, it is recommended to start this tutorial with original data which can be downloaded from any publically available metagenomic datasets. Metagenomic samples provided here were downloaded from 
+https://ibdmdb.org/tunnel/public/summary.html
+
 ``` r
 module load bowtie/2.3.2
 module load samtools/1.9
