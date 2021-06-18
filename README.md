@@ -12,12 +12,14 @@ Any questions about this pipeline please mail to *ashoks773@gmail.com*
   *  **Samtools:** https://gist.github.com/adefelicibus/f6fd06df1b4bb104ceeaccdd7325b856
   *  **Megahit:** https://github.com/voutcn/megahit
   *  **MetaBAT2:** https://bitbucket.org/berkeleylab/metabat/src/master/
+  *  **MaxBin2:** https://sourceforge.net/projects/maxbin2/
   *  **Prodigal:** https://github.com/hyattpd/Prodigal/wiki/installation
   *  **pplacer:** https://github.com/matsen/pplacer
   *  **hmmer:** http://hmmer.org/documentation.html
   *  **CheckM:** https://github.com/Ecogenomics/CheckM
   *  **DAS_Tools:** https://github.com/cmks/DAS_Tool
   *  **CAT and BAT:** https://github.com/dutilh/CAT
+  *  **DEMIC:** https://sourceforge.net/projects/demic/
   *  **Phython3:** https://www.python.org/downloads/
   *  **Java:** https://docs.oracle.com/en/java/javase/11/install/installation-jdk-linux-platforms.html#GUID-737A84E4-2EFF-4D38-8E60-3E29D1B884B8
   *  **Perl:** https://www.perl.org/get.html
@@ -40,7 +42,7 @@ gzip *fastq
 module load bowtie/2.3.2
 module load samtools/1.9
 
-cd ~/IBD_datasets/HMP2/Bacterial_replication/Sample_Dataset/
+cd ~/IBD_datasets/HMP2/Bacterial_replication/Sample_Dataset #Set your directory accrodingly where you would like to put your Quality filtered samples.
 
 ~/Softwares/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -1 Samples/SRR5936130_1.fastq.gz,Samples/SRR5936131_1.fastq.gz,Samples/SRR5936132_1.fastq.gz,Samples/SRR5936133_1.fastq.gz,Samples/SRR5936134_1.fastq.gz,Samples/SRR5936135_1.fastq.gz,Samples/SRR5936136_1.fastq.gz,Samples/SRR5936137_1.fastq.gz,Samples/SRR5936138_1.fastq.gz,Samples/SRR5936139_1.fastq.gz -2 Samples/SRR5936130_2.fastq.gz,Samples/SRR5936131_2.fastq.gz,Samples/SRR5936132_2.fastq.gz,Samples/SRR5936133_2.fastq.gz,Samples/SRR5936134_2.fastq.gz,Samples/SRR5936135_2.fastq.gz,Samples/SRR5936136_2.fastq.gz,Samples/SRR5936137_2.fastq.gz,Samples/SRR5936138_2.fastq.gz,Samples/SRR5936139_2.fastq.gz -m 100000000000 -o MEGAHIT_assembly -t 120
 ``` 
@@ -68,7 +70,101 @@ do
   samtools view -h SAM/${SAMPLE}_sort.bam > SAM/${SAMPLE}_sort.sam #--We need sorted sam files - to run DEMIC in step4
 done
 ```
+# Step3: Binning- Construction of MAGs
+For binning we mainly need Two type of files. 1) contigs file, and 2) contig abundances which can be obtained from mapped bam/sam files generated in previous step.
+## Step3.1 - Using MaxBin2
+``` r
+module load java/1.8.0_221
+mkdir Abundance # Make a folder name Abundace to store contigs abundance information
+cd Samples
+for file in *_1.fastq.gz;
+do
+  SAMPLE=$(echo ${file} | sed "s/_1.fastq.gz//")
+  echo ${SAMPLE}_1.fastq.gz ${SAMPLE}_2.fastq.gz
+~/Softwares/bbmap/pileup.sh in=SAM/${SAMPLE}.sam out=Abundance/${SAMPLE}.cov.txt
+awk '{print $1"\t"$5}' Abundance/${SAMPLE}.cov.txt | grep -v '^#' > Abundance/${SAMPLE}.abundance.txt
+done
+ls Abundance/*abundance.txt > abund_list_file
+module load perl/5.30.1
+perl ~/Softwares/MaxBin-2.2.7/run_MaxBin.pl -contig MEGAHIT_assembly/final.contigs.fa -abund_list abund_list_file -out myout -prob_threshold 0.5 -markerset 40
+mkdir Maxbin_bin
+mv myout* Maxbin_bin/
+```
+## Step3.2 - Using MetaBAT2
+``` r
+mkdir Metabat_bin
+module load metabat/2.12.1 
+jgi_summarize_bam_contig_depths SAM/*bam --outputDepth depth.txt 
+metabat2 -i MEGAHIT_assembly/final.contigs.fa -a depth.txt -o Metabat_bin/bins_dir
+```
+## Step3.3 - Check qaulity of bins and taxonomic assignments Using CheckM
+Qaulity of bins to know the % completeness, % contamination, taxnomomic assignments using lineage specific marker genes can be done suing CheckM
+**Load Modules**
+``` r
+module load python3/3.8.0
+module load prodigal/2.6.3
+module load pplacer/1.1.19
+module load hmmer/3.3.2
+```
+**CheckM database download and set Path** this is one time task
+Before running CheckM check the location where CheckM is installed.
+``` r
+mkdir ~/Databases/check_data
+cd ~/Databases/check_data
+wget https://data.ace.uq.edu.au/public/CheckM_databases/checkm_data_2015_01_16.tar.gz
+tar -zxvf checkm_data_2015_01_16.tar.gz
+~/.local/bin/checkm data setRoot /home/sharmaa4/Databases/checkm_data
+```
+Run CheckM to check the quality of Metabat Bins
+``` r
+~/.local/bin/checkm tree Metabat_bin Metabat_bin_checkM -x .fa -t 24
+~/.local/bin/checkm tree_qa Metabat_bin_checkM -f marker_file
+~/.local/bin/checkm lineage_set Metabat_bin_checkM marker_file
+~/.local/bin/checkm analyze marker_file Metabat_bin Metabat_bin_checkM_analyse -x .fa -t 24
+~/.local/bin/checkm qa marker_file Metabat_bin_checkM_analyse -o 1 -t 24 > metabat_bin_stats.txt
+```
+Run CheckM to check the quality of MaxBin Bins
+``` r
+~/.local/bin/checkm tree Maxbin_bin Maxbin_bin_checkM -x .fasta -t 24
+~/.local/bin/checkm tree_qa Maxbin_bin_checkM -f marker_file_maxbin
+~/.local/bin/checkm lineage_set Maxbin_bin_checkM marker_file_maxbin
+~/.local/bin/checkm analyze marker_file_maxbin Maxbin_bin Maxbin_bin_checkM_analyse -x .fasta -t 24
+~/.local/bin/checkm qa marker_file_maxbin Maxbin_bin_checkM_analyse -o 1 -t 24 > max_bin_stats.txt
+```
+After running CheckM we will have lot of information about Bins quality and their taxonomic affiliations.
+Still there are some other methods for Binning method comparisons and/or taxonomic assignment. We will try those methods before selecting the bins (reconstructed Genomes) to be used for growth rate calculations.
 
+## Step3.4 (Optional) - Integrate results from Different binning methods to generate non-redundant set of bins using DAS_tools
+#https://github.com/cmks/DAS_Tool Check here for more details
+``` r
+mkdir DAS_tools
+cut -d" " -f1 MEGAHIT_assembly/final.contigs.fa > DAS_tools/contigs_formatDastools.fa
+```
+Generate scaffold to bin files for both methods and format them manually to be used for DAS tools
+``` r
+grep ">" Metabat_bin/bins_dir.*fa > DAS_tools/metabat_Scaffolds2bin
+grep ">" Maxbin_bin/myout.*fasta > DAS_tools/maxbin_Scaffolds2bin
+```
+These two files needs to be formated first column should be scaffold name and second column should be bin.ID (tab delimeted) This program will generate the non-redundant set of Bins (Genomes).
+``` r
+./DAS_Tool  -i DAS_tools/metabat_Scaffolds2bin.tsv,
+                 DAS_tools/maxbin_Scaffolds2bin.tsv
+              -l metabat,maxbin
+              -c DAS_tools/contigs_formatDastools.fa
+              -o DAS_tools/DASToolRun1
+```
+## Step3.5 (Optional) - taxonomic classification of contigs and metagenome assembled genomes (MAGs/bins) using CAT and BAT.
+#https://github.com/dutilh/CAT # Visit this site for more details
+``` r
+cd ~/Databases
+wget tbb.bio.uu.nl/bastiaan/CAT_prepare/CAT_prepare_20210107.tar.gz
+tar -zxvf CAT_prepare_20210107.tar.gz
+```
+**Note: Taxonomic assignment using CAT and BAT is still under process. However, as I have mentioned Step 3.4 and 3.5 are completely optional. Selected bins (genomes) obtained after Step3.3 can be used for the final Step which is "Bacterial Growth Rate Calculation".**
 
-
-``` 
+# Step4: Use DEMIC to calculate Bacterial Growth Rates - ** Final Step **
+https://sourceforge.net/projects/demic/ # Check this for installation and detailed usase
+DEMIC need two folders as input: One which contains Sorted sam files (we have generated this in Step2), Second folder should be constructed bins directory it can Metabat_bin or Maxbin_bin or any directly which contains high quality and non-redundant bins. This can be decided after running CheckM or DAS tools
+``` r
+perl ~/Softwares/DEMIC.pl -S SAM -F Metabat_bin -O Demic_output
+```
