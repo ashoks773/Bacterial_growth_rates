@@ -18,4 +18,7 @@ Any questions about this pipeline please mail to *ashoks773@gmail.com*
   *  **hmmer:** http://hmmer.org/documentation.html
   *  **CheckM:** https://github.com/Ecogenomics/CheckM
   *  **DAS_Tools:** https://github.com/cmks/DAS_Tool
-  *  
+  *  **CAT and BAT:** https://github.com/dutilh/CAT
+  
+  ## Step1: Co-assembly
+  
