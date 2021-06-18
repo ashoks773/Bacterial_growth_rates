@@ -175,4 +175,4 @@ DEMIC need two folders as input: One which contains Sorted sam files (we have ge
 ``` r
 perl ~/Softwares/DEMIC.pl -S SAM -F Metabat_bin -O Demic_output
 ```
-**Note:** Same steps can be used if for individual sample assemblies. These multiple assembled files can be concatenated and then redundacy can be removed using CD-HIT. This final contig set (no need to run co-assembly **or** both methods can be used seperately to generate bins) can be used for downstream processing from **Step2** onwards.
+**Note:** Same steps can be used for individual sample assemblies. For that multiple assembled files can be concatenated and then redundacy can be removed using CD-HIT. This final contig set (now no need to run co-assembly **or** both methods can be used seperately to generate bins) can be used for downstream processing from **Step2** onwards.
