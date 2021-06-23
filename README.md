@@ -167,7 +167,28 @@ cd ~/Databases
 wget tbb.bio.uu.nl/bastiaan/CAT_prepare/CAT_prepare_20210107.tar.gz
 tar -zxvf CAT_prepare_20210107.tar.gz
 ```
-**Note: This Taxonomic assignment tutorial using CAT and BAT is still under preparation. However, as I have mentioned, Step 3.4 and 3.5 are completely optional. Selected bins (genomes) obtained after Step3.3 can be used for the final Step that is "Bacterial Growth Rate Calculation".**
+Database preparation is done. **This is a one time task**. Now we can run the CAT/BAT to assign taxonomy to contigs and Bins
+``` r
+module load python3/3.8.0
+module load prodigal/2.6.3
+cd ~/IBD_datasets/HMP2/Bacterial_replication/Sample_Dataset
+
+#--- Run CAT on contigs
+~/Softwares/CAT-master/CAT_pack/CAT contigs -c MEGAHIT_assembly/final.contigs.fa -d ~/Databases/CAT_prepare_20210107/2021-01-07_CAT_database -t ~/Databases/CAT_prepare_20210107/2021-01-07_taxonomy --path_to_diamond ~/Databases/CAT_prepare_20210107/Diamond_2.0.6/diamond -p out.CAT.predicted_proteins.faa
+~/Softwares/CAT-master/CAT_pack/CAT add_names -i out.CAT.contig2classification.txt -o out.CAT.contig2classification_Names.txt -t ~/Databases/CAT_prepare_20210107/2021-01-07_taxonomy --only_official --exclude_scores
+~/Softwares/CAT-master/CAT_pack/CAT summarise -c ../MEGAHIT_assembly/final.contigs.fa -i out.CAT.contig2classification_Names.txt -o CAT_summary
+
+#-check contamination in a Selected Bin
+~/Softwares/CAT-master/CAT_pack/CAT bin -b Maxbin_bin/myout.061.fasta -d ~/Databases/CAT_prepare_20210107/2021-01-07_CAT_database -t ~/Databases/CAT_prepare_20210107/2021-01-07_taxonomy -o BAT_myout061MAG --path_to_diamond ~/Databases/CAT_prepare_20210107/Diamond_2.0.6/diamond
+~/Softwares/CAT-master/CAT_pack/CAT contigs -c Maxbin_bin/myout.061.fasta -d ~/Databases/CAT_prepare_20210107/2021-01-07_CAT_database -t ~/Databases/CAT_prepare_20210107/2021-01-07_taxonomy -p BAT.myout061MAG.predicted_proteins.faa -a BAT.myout061MAG.alignment.diamond -o CAT.myout061MAG --path_to_diamond ~/Databases/CAT_prepare_20210107/Diamond_2.0.6/diamond
+
+#--- Run CAT on Bins
+~/Softwares/CAT-master/CAT_pack/CAT bins -b Metabat_bin --bin_suffix .fa -d ~/Databases/CAT_prepare_20210107/2021-01-07_CAT_database -t ~/Databases/CAT_prepare_20210107/2021-01-07_taxonomy --path_to_diamond ~/Databases/CAT_prepare_20210107/Diamond_2.0.6/diamond
+~/Softwares/CAT-master/CAT_pack/CAT add_names -i out.BAT.bin2classification.txt -o out.BAT.bin2classification_Names.txt -t ~/Databases/CAT_prepare_20210107/2021-01-07_taxonomy --only_official --exclude_scores
+~/Softwares/CAT-master/CAT_pack/CAT summarise -i out.BAT.bin2classification_Names.txt -o BAT_summary
+
+```
+**Note: Step 3.4 and 3.5 are completely optional. Selected bins (genomes) obtained after Step3.3 can be used for the final Step that is "Bacterial Growth Rate Calculation".**
 
 ## Step4: Use DEMIC to calculate Bacterial Growth Rates - ** Final Step **
 https://sourceforge.net/projects/demic/ # Check this for installation and detailed usase
