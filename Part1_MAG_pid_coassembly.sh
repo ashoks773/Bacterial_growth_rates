@@ -9,7 +9,7 @@ module load samtools/1.9
 cd ~/IBD_datasets/HMP2/Bacterial_replication/Co_assembly
 
 #*************** Start for loop
-for i in $(cat check.txt)
+for i in $(cat sample_list.txt)
 do
 pid=$(echo "$i" | sed "s/_sample_ID.txt//")
 pid_name=$(echo "$pid" | sed "s/Files_listing\///")
@@ -39,6 +39,8 @@ anvi-script-reformat-fasta "$pid_name"_MEGAHIT_assembly/final.contigs.fa -o "$pi
 
 anvi-gen-contigs-database -f "$pid_name"_MEGAHIT_assembly/contigs.fa -o "$pid_name"_MEGAHIT_assembly/contigs.db -n "my metagenome" -T 12
 anvi-run-hmms -c "$pid_name"_MEGAHIT_assembly/contigs.db -I Campbell_et_al -T 12
+#anvi-run-hmms -c "$pid_name"_MEGAHIT_assembly/contigs.db -I Bacteria_71 -T 12
+#anvi-run-scg-taxonomy -c "$pid_name"_MEGAHIT_assembly/contigs.db -T 12
 anvi-setup-ncbi-cogs -T 12 --just-do-it
 anvi-run-ncbi-cogs -c "$pid_name"_MEGAHIT_assembly/contigs.db  -T 12
 #--- Assign taxonomy with tool called Centrifuge
@@ -68,7 +70,7 @@ for k in $(cat "$i")
   samtools view -b -o "$pid_name"_MEGAHIT_assembly/SAM/"$k"_raw.bam "$pid_name"_MEGAHIT_assembly/SAM/"$k".sam
   samtools sort -o "$pid_name"_MEGAHIT_assembly/SAM/"$k".bam "$pid_name"_MEGAHIT_assembly/SAM/"$k"_raw.bam
   samtools index "$pid_name"_MEGAHIT_assembly/SAM/"$k".bam
-  #samtools view -h SAM/"$i".bam > SAM/"$i"_sort.sam
+  samtools view -h SAM/"$k".bam > SAM/"$k"_sort.sam
  done
 
 #---- Make coverage files for MaxBin and MetaBat if needed in the future
@@ -82,7 +84,7 @@ done
 ls "$pid_name"_MEGAHIT_assembly/Abundance/*abundance.txt > "$pid_name"_MEGAHIT_assembly/abund_list_file
 
 #---Now remove sam and raw bam files
-rm "$pid_name"_MEGAHIT_assembly/SAM/*sam
+#rm "$pid_name"_MEGAHIT_assembly/SAM/*sam
 rm "$pid_name"_MEGAHIT_assembly/SAM/*_raw.bam
 
 module load metabat/2.12.1

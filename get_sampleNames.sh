@@ -12,7 +12,7 @@ for i in $(cat PID.txt)
  done
 mkdir Files_listing
 mv *sample_ID.txt Files_listing
-ls Files_listing/*sample_ID.txt > list.txt
+ls Files_listing/*sample_ID.txt > sample_list.txt
 
 
 
