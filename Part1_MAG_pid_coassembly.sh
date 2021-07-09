@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#By: Ashok K. Sharma
+#Date: 6th July 2021
+
 #--- List.txt file will be generated which will contain all the File names with Patient IDs. In each patient ID files names - all the names belonging to that patient will bewritten. I have used the following Script file for that purpose.
 # sh get_sampleNames.sh
 
