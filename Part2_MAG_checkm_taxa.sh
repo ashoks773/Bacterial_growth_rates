@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#By: Ashok K. Sharma
+#Date: 7th July 2021
+
 #https://educe-ubc.github.io/MICB405/introduction-to-anvio.html
 #https://astrobiomike.github.io/metagenomics/metagen_anvio
 #https://merenlab.org/2016/06/18/importing-taxonomy/
