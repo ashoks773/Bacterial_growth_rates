@@ -190,10 +190,12 @@ cd ~/IBD_datasets/HMP2/Bacterial_replication/Sample_Dataset
 ```
 **Note: Step 3.4 and 3.5 are completely optional. Selected bins (genomes) obtained after Step3.3 can be used for the final Step that is "Bacterial Growth Rate Calculation".**
 
-## Step4: Use DEMIC to calculate Bacterial Growth Rates - ** Final Step **
+## Step4: Use iRep, CoPTR, and DEMIC to calculate Bacterial Growth Rates - ** Final Step **
 https://sourceforge.net/projects/demic/ # Check this for installation and detailed usase
 DEMIC need two folders as input: One which contains Sorted sam files (we have generated this in Step2), Second folder should be constructed bins directory it can Metabat_bin or Maxbin_bin or any directly which contains high quality and non-redundant bins. This can be decided after running CheckM or DAS tools
 ``` r
 perl ~/Softwares/DEMIC.pl -S SAM -F Metabat_bin -O Demic_output
 ```
+For iRep and CoPTR seperate scipt files (Part4) are added. 
+
 **Note:** Same steps can be used for individual sample assemblies. For that multiple assembled files can be concatenated and then redundacy can be removed using CD-HIT. This final contig set (now no need to run co-assembly **or** both methods can be used seperately to generate bins) can be used for downstream processing from **Step2** onwards.
