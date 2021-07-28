@@ -7,7 +7,7 @@
 # This program will be run for All final selected bins (>90% completeness, <5% contamination, and less then 175 Scaffolds per 1Mbps) from all 106 individuals 
 # Rename bins to keep them in a single folder and keep the map files in Individuals folders. 
 
-cd ~/home/sharmaa4/IBD_datasets/HMP2/Bacterial_replication/Co_assembly
+cd ~/IBD_datasets/HMP2/Bacterial_replication/Co_assembly
 source /hpc/apps/miniconda/3/etc/profile.d/conda.sh
 conda activate coptr
 
