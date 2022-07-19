@@ -10,3 +10,9 @@ mirror -c dir1
 mirror -c 2018-05-04 /common/sharmaa4 --parallel=10
 mirror -n 2018-05-04 /common/sharmaa4 --parallel=10 #If I would like to download only Newer Files
 
+
+#-- Download directly (create filelist from the website)
+https://ibdmdb.org/tunnel/public/HMP2/MTX/1750/rawfiles
+#HSMA33OT.fastq.gz	HSMA33OT_clean.log
+#HSM7J4NY.fastq.gz	HSM7J4NY_clean.log
+cut -f 1 mtxfiles.txt | while read line ; do wget https://ibdmdb.org/tunnel/static/HMP2/MTX/1750/$line --no-check-certificate ; done
