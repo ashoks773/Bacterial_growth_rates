@@ -23,7 +23,7 @@ Any questions about this pipeline please mail to *ashoks773@gmail.com*
   *  **DEMIC:** https://sourceforge.net/projects/demic/
   *  **Cdhit:** https://github.com/weizhongli/cdhit/releases
 
-Before starting the tutorial check the installation of the followings also:
+Before starting the tutorial check the installation of the followings:
   *  **Phython3:** https://www.python.org/downloads/
   *  **Perl:** https://www.perl.org/get.html
   *  **Java:** https://docs.oracle.com/en/java/javase/11/install/installation-jdk-linux-platforms.html#GUID-737A84E4-2EFF-4D38-8E60-3E29D1B884B8
