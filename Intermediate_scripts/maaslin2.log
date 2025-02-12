@@ -1,0 +1,598 @@
+2022-08-10 11:14:08 INFO::Writing function arguments to log file
+2022-08-10 11:14:08 DEBUG::Function arguments
+2022-08-10 11:14:08 DEBUG::Output folder: MassLin_output
+2022-08-10 11:14:08 DEBUG::Min Abundance: 0.000000
+2022-08-10 11:14:08 DEBUG::Min Prevalence: 0.100000
+2022-08-10 11:14:08 DEBUG::Normalization: NONE
+2022-08-10 11:14:08 DEBUG::Transform: AST
+2022-08-10 11:14:08 DEBUG::Analysis method: LM
+2022-08-10 11:14:08 DEBUG::Max significance: 0.250000
+2022-08-10 11:14:08 DEBUG::Random effects: site,subject
+2022-08-10 11:14:08 DEBUG::Fixed effects: diagnosis,dysbiosisnonIBD,dysbiosisUC,dysbiosisCD,antibiotics,age
+2022-08-10 11:14:08 DEBUG::Correction method: BH
+2022-08-10 11:14:08 DEBUG::Standardize: FALSE
+2022-08-10 11:14:08 DEBUG::Cores: 1
+2022-08-10 11:14:08 INFO::Verifying options selected are valid
+2022-08-10 11:14:08 INFO::Determining format of input files
+2022-08-10 11:14:08 INFO::Input format is data samples as rows and metadata samples as rows
+2022-08-10 11:14:08 DEBUG::A total of 1316 samples were found in both the data and metadata
+2022-08-10 11:14:08 DEBUG::Reordering data/metadata to use same sample ordering
+2022-08-10 11:14:08 WARNING::Feature name not found in metadata so not applied to formula as fixed effect: dysbiosisnonIBD , dysbiosisUC , dysbiosisCD
+2022-08-10 11:14:08 WARNING::Feature name not found in metadata so not applied to formula as random effect: subject
+2022-08-10 11:14:08 INFO::Formula for random effects: expr ~ (1 | site)
+2022-08-10 11:14:08 INFO::Formula for fixed effects: expr ~  diagnosis + antibiotics + age
+2022-08-10 11:14:09 INFO::Filter data based on min abundance and min prevalence
+2022-08-10 11:14:09 INFO::Total samples in data: 1316
+2022-08-10 11:14:09 INFO::Min samples required with min abundance for a feature not to be filtered: 131.600000
+2022-08-10 11:14:09 INFO::Total filtered features: 65
+2022-08-10 11:14:09 INFO::Filtered feature names from abundance and prevalence filtering: X484020.3.patric, X568816.4.patric, X1121101.3.patric, X1128111.23.patric, X1262776.3.patric, X1262777.3.patric, X1262949.3.patric, X1262979.3.patric, X1262989.3.patric, X1522.9.patric, X1673721.3.patric, X169435.7.patric, X261299.4.patric, X33043.5.patric, X445974.6.patric, X460384.4.patric, X545696.5.patric, X573.1549.patric, X59620.49.patric, X742725.3.patric, X817.56.patric, ERS235525_24.hgm, ERS396528_23.hgm, ERS473088_19.hgm, ERS473219_31.hgm, ERS473221_34.hgm, ERS473240_3.hgm, ERS473296_9.hgm, ERS473343_37.hgm, ERS473381_6.hgm, ERS473414_25.hgm, ERS537236_4.hgm, ERS537246_12.hgm, ERS537304_27.hgm, ERS537306_47.hgm, ERS537338_17.hgm, ERS537352_6.hgm, ERS537358_50.hgm, ERS537392_14.hgm, ERS608491_27.hgm, ERS608495_69.hgm, ERS608502_34.hgm, ERS608507_35.hgm, ERS608510_48.hgm, ERS608548_42.hgm, ERS608550_86.hgm, SRS019582_79.hgm, SRS020328_21.hgm, SRS024075_3.hgm, SRS056519_39.hgm, SRS147652_2.hgm, SRS1596777_76.hgm, SRS1596842_68.hgm, SRS1596857_138.hgm, SRS1719091_5.hgm, SRS1735703_14.hgm, SRS259497_2.hgm, SRS294840_55.hgm, SRS295008_15.hgm, SRS295010_88.hgm, SRS475574_7.hgm, SRS476037_7.hgm, SRS476121_4.hgm, SRS476326_100.hgm, SRS820605_29.hgm
+2022-08-10 11:14:09 INFO::Total filtered features with variance filtering: 0
+2022-08-10 11:14:09 INFO::Filtered feature names from variance filtering:
+2022-08-10 11:14:09 INFO::Running selected normalization method: NONE
+2022-08-10 11:14:09 INFO::Bypass z-score application to metadata
+2022-08-10 11:14:09 INFO::Running selected transform method: AST
+2022-08-10 11:14:09 INFO::Running selected analysis method: LM
+2022-08-10 11:14:09 INFO::Fitting model to feature number 1, X1297617.4.patric
+2022-08-10 11:14:09 INFO::Fitting model to feature number 2, X349741.6.patric
+2022-08-10 11:14:09 INFO::Fitting model to feature number 3, X657309.4.patric
+2022-08-10 11:14:09 INFO::Fitting model to feature number 4, X657319.15.patric
+2022-08-10 11:14:09 INFO::Fitting model to feature number 5, X709991.3.patric
+2022-08-10 11:14:09 INFO::Fitting model to feature number 6, X890402.3.patric
+2022-08-10 11:14:09 INFO::Fitting model to feature number 7, X1073375.3.patric
+2022-08-10 11:14:09 INFO::Fitting model to feature number 8, X1203465.3.patric
+2022-08-10 11:14:09 INFO::Fitting model to feature number 9, X1236512.3.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 10, X1262754.3.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 11, X1262889.3.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 12, X1262947.3.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 13, X1262992.3.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 14, X1263070.3.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 15, X1263072.3.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 16, X1263073.3.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 17, X1263074.4.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 18, X1263105.3.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 19, X1263107.3.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 20, X1432052.9.patric
+2022-08-10 11:14:10 INFO::Fitting model to feature number 21, X1650661.3.patric
+2022-08-10 11:14:11 INFO::Fitting model to feature number 22, X1697787.3.patric
+2022-08-10 11:14:11 INFO::Fitting model to feature number 23, X1897011.3.patric
+2022-08-10 11:14:11 INFO::Fitting model to feature number 24, X1952006.3.patric
+2022-08-10 11:14:11 INFO::Fitting model to feature number 25, X208479.8.patric
+2022-08-10 11:14:11 INFO::Fitting model to feature number 26, X246787.5.patric
+2022-08-10 11:14:11 INFO::Fitting model to feature number 27, X2562617057.img
+2022-08-10 11:14:11 INFO::Fitting model to feature number 28, X2562617183.img
+2022-08-10 11:14:11 INFO::Fitting model to feature number 29, X2654588179.img
+2022-08-10 11:14:11 INFO::Fitting model to feature number 30, X28116.19.patric
+2022-08-10 11:14:11 INFO::Fitting model to feature number 31, X39488.4.patric
+2022-08-10 11:14:11 INFO::Fitting model to feature number 32, X445970.5.patric
+2022-08-10 11:14:11 INFO::Fitting model to feature number 33, X457421.5.patric
+2022-08-10 11:14:11 INFO::Fitting model to feature number 34, X46503.4.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 35, X469591.4.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 36, X469610.4.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 37, X483215.6.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 38, X59620.13.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 39, X59620.24.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 40, X649756.4.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 41, X665951.3.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 42, X702446.3.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 43, X742821.3.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 44, X765821.5.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 45, X765821.8.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 46, X927665.4.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 47, X999410.3.patric
+2022-08-10 11:14:12 INFO::Fitting model to feature number 48, ERS235534_25.hgm
+2022-08-10 11:14:12 INFO::Fitting model to feature number 49, ERS235560_81.hgm
+2022-08-10 11:14:12 INFO::Fitting model to feature number 50, ERS235564_44.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 51, ERS396406_17.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 52, ERS396428_22.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 53, ERS396436_36.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 54, ERS396465_42.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 55, ERS396493_5.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 56, ERS396509_31.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 57, ERS473051_14.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 58, ERS473122_41.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 59, ERS473180_17.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 60, ERS473331_31.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 61, ERS537180_31.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 62, ERS537183_49.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 63, ERS537188_55.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 64, ERS537194_38.hgm
+2022-08-10 11:14:13 INFO::Fitting model to feature number 65, ERS537197_59.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 66, ERS537219_61.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 67, ERS537221_53.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 68, ERS537229_8.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 69, ERS537233_63.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 70, ERS537240_18.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 71, ERS537247_14.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 72, ERS537252_4.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 73, ERS537292_27.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 74, ERS537293_53.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 75, ERS537369_59.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 76, ERS608493_46.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 77, ERS608519_39.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 78, ERS608530_15.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 79, ERS608550_64.hgm
+2022-08-10 11:14:14 INFO::Fitting model to feature number 80, ERS608606_84.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 81, ERS631833_15.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 82, SRS015663_20.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 83, SRS017307_13.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 84, SRS019910_14.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 85, SRS020233_5.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 86, SRS021219_12.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 87, SRS049402_2.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 88, SRS050026_15.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 89, SRS050752_17.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 90, SRS075878_45.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 91, SRS076929_37.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 92, SRS077502_20.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 93, SRS077552_27.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 94, SRS077849_38.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 95, SRS098061_38.hgm
+2022-08-10 11:14:15 INFO::Fitting model to feature number 96, SRS098717_4.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 97, SRS104400_3.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 98, SRS142712_3.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 99, SRS143991_10.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 100, SRS144714_48.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 101, SRS1596798_70.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 102, SRS1596798_81.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 103, SRS1596800_42.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 104, SRS1596807_67.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 105, SRS1596849_88.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 106, SRS1596872_171.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 107, SRS1719444_21.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 108, SRS1719567_3.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 109, SRS1735456_15.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 110, SRS1735557_8.hgm
+2022-08-10 11:14:16 INFO::Fitting model to feature number 111, SRS1735679_4.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 112, SRS294930_28.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 113, SRS294956_23.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 114, SRS294989_46.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 115, SRS295012_18.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 116, SRS311548_12.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 117, SRS332210_5.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 118, SRS372948_2.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 119, SRS373206_4.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 120, SRS475693_1.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 121, SRS476023_14.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 122, SRS476024_18.hgm
+2022-08-10 11:14:17 INFO::Fitting model to feature number 123, SRS820594_22.hgm
+2022-08-10 11:14:17 INFO::Counting total values for each feature
+2022-08-10 11:14:17 INFO::Writing residuals to file MassLin_output/residuals.rds
+2022-08-10 11:14:17 INFO::Writing fitted values to file MassLin_output/fitted.rds
+2022-08-10 11:14:17 INFO::Writing extracted random effects to file MassLin_output/ranef.rds
+2022-08-10 11:14:17 INFO::Writing all results to file (ordered by increasing q-values): MassLin_output/all_results.tsv
+2022-08-10 11:14:17 INFO::Writing the significant results (those which are less than or equal to the threshold of 0.250000 ) to file (ordered by increasing q-values): MassLin_output/significant_results.tsv
+2022-08-10 11:14:18 INFO::Writing heatmap of significant results to file: MassLin_output/heatmap.pdf
+2022-08-10 11:14:18 INFO::Writing association plots (one for each significant association) to output folder: MassLin_output
+2022-08-10 11:14:18 INFO::Plotting associations from most to least significant, grouped by metadata
+2022-08-10 11:14:18 INFO::Plotting data for metadata number 1, diagnosis
+2022-08-10 11:14:18 INFO::Creating boxplot for categorical data, diagnosis vs X445970.5.patric
+2022-08-10 11:14:18 INFO::Creating boxplot for categorical data, diagnosis vs ERS473051_14.hgm
+2022-08-10 11:14:18 INFO::Creating boxplot for categorical data, diagnosis vs X742821.3.patric
+2022-08-10 11:14:18 INFO::Creating boxplot for categorical data, diagnosis vs ERS473051_14.hgm
+2022-08-10 11:14:18 INFO::Creating boxplot for categorical data, diagnosis vs SRS050752_17.hgm
+2022-08-10 11:14:19 INFO::Creating boxplot for categorical data, diagnosis vs SRS077849_38.hgm
+2022-08-10 11:14:19 INFO::Creating boxplot for categorical data, diagnosis vs X445970.5.patric
+2022-08-10 11:14:19 INFO::Creating boxplot for categorical data, diagnosis vs X657319.15.patric
+2022-08-10 11:14:19 INFO::Creating boxplot for categorical data, diagnosis vs X349741.6.patric
+2022-08-10 11:14:19 INFO::Creating boxplot for categorical data, diagnosis vs ERS537221_53.hgm
+2022-08-10 11:14:19 INFO::Creating boxplot for categorical data, diagnosis vs X742821.3.patric
+2022-08-10 11:14:19 INFO::Creating boxplot for categorical data, diagnosis vs X483215.6.patric
+2022-08-10 11:14:20 INFO::Creating boxplot for categorical data, diagnosis vs X657319.15.patric
+2022-08-10 11:14:20 INFO::Creating boxplot for categorical data, diagnosis vs ERS396493_5.hgm
+2022-08-10 11:14:20 INFO::Creating boxplot for categorical data, diagnosis vs SRS1596872_171.hgm
+2022-08-10 11:14:20 INFO::Creating boxplot for categorical data, diagnosis vs SRS104400_3.hgm
+2022-08-10 11:14:20 INFO::Creating boxplot for categorical data, diagnosis vs SRS077502_20.hgm
+2022-08-10 11:14:20 INFO::Creating boxplot for categorical data, diagnosis vs ERS608519_39.hgm
+2022-08-10 11:14:20 INFO::Creating boxplot for categorical data, diagnosis vs SRS017307_13.hgm
+2022-08-10 11:14:20 INFO::Creating boxplot for categorical data, diagnosis vs X927665.4.patric
+2022-08-10 11:14:21 INFO::Creating boxplot for categorical data, diagnosis vs SRS017307_13.hgm
+2022-08-10 11:14:21 INFO::Creating boxplot for categorical data, diagnosis vs SRS049402_2.hgm
+2022-08-10 11:14:21 INFO::Creating boxplot for categorical data, diagnosis vs SRS098717_4.hgm
+2022-08-10 11:14:21 INFO::Creating boxplot for categorical data, diagnosis vs ERS473180_17.hgm
+2022-08-10 11:14:21 INFO::Creating boxplot for categorical data, diagnosis vs SRS104400_3.hgm
+2022-08-10 11:14:21 INFO::Creating boxplot for categorical data, diagnosis vs X208479.8.patric
+2022-08-10 11:14:21 INFO::Creating boxplot for categorical data, diagnosis vs X1897011.3.patric
+2022-08-10 11:14:22 INFO::Creating boxplot for categorical data, diagnosis vs SRS475693_1.hgm
+2022-08-10 11:14:22 INFO::Creating boxplot for categorical data, diagnosis vs SRS820594_22.hgm
+2022-08-10 11:14:22 INFO::Creating boxplot for categorical data, diagnosis vs ERS396493_5.hgm
+2022-08-10 11:14:22 INFO::Creating boxplot for categorical data, diagnosis vs SRS077552_27.hgm
+2022-08-10 11:14:22 INFO::Creating boxplot for categorical data, diagnosis vs SRS077849_38.hgm
+2022-08-10 11:14:22 INFO::Creating boxplot for categorical data, diagnosis vs ERS537247_14.hgm
+2022-08-10 11:14:22 INFO::Creating boxplot for categorical data, diagnosis vs X349741.6.patric
+2022-08-10 11:14:22 INFO::Creating boxplot for categorical data, diagnosis vs ERS473180_17.hgm
+2022-08-10 11:14:23 INFO::Creating boxplot for categorical data, diagnosis vs ERS608519_39.hgm
+2022-08-10 11:14:23 INFO::Creating boxplot for categorical data, diagnosis vs SRS050026_15.hgm
+2022-08-10 11:14:23 INFO::Creating boxplot for categorical data, diagnosis vs ERS473122_41.hgm
+2022-08-10 11:14:23 INFO::Creating boxplot for categorical data, diagnosis vs SRS050026_15.hgm
+2022-08-10 11:14:23 INFO::Creating boxplot for categorical data, diagnosis vs ERS537221_53.hgm
+2022-08-10 11:14:23 INFO::Creating boxplot for categorical data, diagnosis vs X59620.24.patric
+2022-08-10 11:14:23 INFO::Creating boxplot for categorical data, diagnosis vs SRS019910_14.hgm
+2022-08-10 11:14:23 INFO::Creating boxplot for categorical data, diagnosis vs SRS050752_17.hgm
+2022-08-10 11:14:24 INFO::Creating boxplot for categorical data, diagnosis vs SRS098717_4.hgm
+2022-08-10 11:14:24 INFO::Creating boxplot for categorical data, diagnosis vs SRS294930_28.hgm
+2022-08-10 11:14:24 INFO::Creating boxplot for categorical data, diagnosis vs X1262754.3.patric
+2022-08-10 11:14:24 INFO::Creating boxplot for categorical data, diagnosis vs ERS473122_41.hgm
+2022-08-10 11:14:24 INFO::Creating boxplot for categorical data, diagnosis vs SRS1596798_81.hgm
+2022-08-10 11:14:24 INFO::Creating boxplot for categorical data, diagnosis vs X1263105.3.patric
+2022-08-10 11:14:24 INFO::Creating boxplot for categorical data, diagnosis vs X702446.3.patric
+2022-08-10 11:14:24 INFO::Creating boxplot for categorical data, diagnosis vs X1897011.3.patric
+2022-08-10 11:14:25 INFO::Creating boxplot for categorical data, diagnosis vs SRS294989_46.hgm
+2022-08-10 11:14:25 INFO::Creating boxplot for categorical data, diagnosis vs X59620.24.patric
+2022-08-10 11:14:25 INFO::Creating boxplot for categorical data, diagnosis vs SRS295012_18.hgm
+2022-08-10 11:14:25 INFO::Creating boxplot for categorical data, diagnosis vs SRS373206_4.hgm
+2022-08-10 11:14:25 INFO::Creating boxplot for categorical data, diagnosis vs SRS1596849_88.hgm
+2022-08-10 11:14:25 INFO::Creating boxplot for categorical data, diagnosis vs X1952006.3.patric
+2022-08-10 11:14:25 INFO::Creating boxplot for categorical data, diagnosis vs ERS608530_15.hgm
+2022-08-10 11:14:26 INFO::Creating boxplot for categorical data, diagnosis vs SRS020233_5.hgm
+2022-08-10 11:14:26 INFO::Creating boxplot for categorical data, diagnosis vs X1262947.3.patric
+2022-08-10 11:14:26 INFO::Creating boxplot for categorical data, diagnosis vs X246787.5.patric
+2022-08-10 11:14:26 INFO::Creating boxplot for categorical data, diagnosis vs ERS235534_25.hgm
+2022-08-10 11:14:26 INFO::Creating boxplot for categorical data, diagnosis vs X2654588179.img
+2022-08-10 11:14:26 INFO::Creating boxplot for categorical data, diagnosis vs ERS537247_14.hgm
+2022-08-10 11:14:26 INFO::Creating boxplot for categorical data, diagnosis vs SRS475693_1.hgm
+2022-08-10 11:14:26 INFO::Creating boxplot for categorical data, diagnosis vs X1952006.3.patric
+2022-08-10 11:14:27 INFO::Creating boxplot for categorical data, diagnosis vs SRS144714_48.hgm
+2022-08-10 11:14:27 INFO::Creating boxplot for categorical data, diagnosis vs SRS1735557_8.hgm
+2022-08-10 11:14:27 INFO::Creating boxplot for categorical data, diagnosis vs X208479.8.patric
+2022-08-10 11:14:27 INFO::Creating boxplot for categorical data, diagnosis vs SRS311548_12.hgm
+2022-08-10 11:14:27 INFO::Creating boxplot for categorical data, diagnosis vs ERS537183_49.hgm
+2022-08-10 11:14:27 INFO::Creating boxplot for categorical data, diagnosis vs SRS311548_12.hgm
+2022-08-10 11:14:27 INFO::Creating boxplot for categorical data, diagnosis vs X28116.19.patric
+2022-08-10 11:14:28 INFO::Creating boxplot for categorical data, diagnosis vs ERS537240_18.hgm
+2022-08-10 11:14:28 INFO::Creating boxplot for categorical data, diagnosis vs SRS1596872_171.hgm
+2022-08-10 11:14:28 INFO::Creating boxplot for categorical data, diagnosis vs ERS537180_31.hgm
+2022-08-10 11:14:28 INFO::Creating boxplot for categorical data, diagnosis vs ERS537229_8.hgm
+2022-08-10 11:14:28 INFO::Creating boxplot for categorical data, diagnosis vs SRS098061_38.hgm
+2022-08-10 11:14:28 INFO::Creating boxplot for categorical data, diagnosis vs SRS019910_14.hgm
+2022-08-10 11:14:28 INFO::Creating boxplot for categorical data, diagnosis vs ERS396406_17.hgm
+2022-08-10 11:14:29 INFO::Creating boxplot for categorical data, diagnosis vs X1650661.3.patric
+2022-08-10 11:14:29 INFO::Creating boxplot for categorical data, diagnosis vs SRS373206_4.hgm
+2022-08-10 11:14:29 INFO::Creating boxplot for categorical data, diagnosis vs X2562617057.img
+2022-08-10 11:14:29 INFO::Creating boxplot for categorical data, diagnosis vs X665951.3.patric
+2022-08-10 11:14:29 INFO::Creating boxplot for categorical data, diagnosis vs ERS396406_17.hgm
+2022-08-10 11:14:29 INFO::Creating boxplot for categorical data, diagnosis vs ERS235534_25.hgm
+2022-08-10 11:14:29 INFO::Creating boxplot for categorical data, diagnosis vs SRS020233_5.hgm
+2022-08-10 11:14:30 INFO::Creating boxplot for categorical data, diagnosis vs X1262947.3.patric
+2022-08-10 11:14:30 INFO::Creating boxplot for categorical data, diagnosis vs X709991.3.patric
+2022-08-10 11:14:30 INFO::Creating boxplot for categorical data, diagnosis vs SRS143991_10.hgm
+2022-08-10 11:14:30 INFO::Creating boxplot for categorical data, diagnosis vs X1263074.4.patric
+2022-08-10 11:14:30 INFO::Creating boxplot for categorical data, diagnosis vs SRS098061_38.hgm
+2022-08-10 11:14:30 INFO::Creating boxplot for categorical data, diagnosis vs ERS473331_31.hgm
+2022-08-10 11:14:30 INFO::Creating boxplot for categorical data, diagnosis vs X1262992.3.patric
+2022-08-10 11:14:31 INFO::Creating boxplot for categorical data, diagnosis vs X246787.5.patric
+2022-08-10 11:14:31 INFO::Creating boxplot for categorical data, diagnosis vs ERS608550_64.hgm
+2022-08-10 11:14:31 INFO::Creating boxplot for categorical data, diagnosis vs X1263070.3.patric
+2022-08-10 11:14:31 INFO::Creating boxplot for categorical data, diagnosis vs SRS077552_27.hgm
+2022-08-10 11:14:31 INFO::Creating boxplot for categorical data, diagnosis vs SRS144714_48.hgm
+2022-08-10 11:14:31 INFO::Creating boxplot for categorical data, diagnosis vs X999410.3.patric
+2022-08-10 11:14:31 INFO::Creating boxplot for categorical data, diagnosis vs ERS396428_22.hgm
+2022-08-10 11:14:32 INFO::Creating boxplot for categorical data, diagnosis vs ERS537183_49.hgm
+2022-08-10 11:14:32 INFO::Creating boxplot for categorical data, diagnosis vs X28116.19.patric
+2022-08-10 11:14:32 INFO::Creating boxplot for categorical data, diagnosis vs ERS396428_22.hgm
+2022-08-10 11:14:32 INFO::Creating boxplot for categorical data, diagnosis vs ERS473331_31.hgm
+2022-08-10 11:14:32 INFO::Creating boxplot for categorical data, diagnosis vs X765821.5.patric
+2022-08-10 11:14:32 INFO::Creating boxplot for categorical data, diagnosis vs SRS015663_20.hgm
+2022-08-10 11:14:33 INFO::Creating boxplot for categorical data, diagnosis vs ERS235560_81.hgm
+2022-08-10 11:14:33 INFO::Creating boxplot for categorical data, diagnosis vs X1262889.3.patric
+2022-08-10 11:14:33 INFO::Creating boxplot for categorical data, diagnosis vs SRS049402_2.hgm
+2022-08-10 11:14:33 INFO::Creating boxplot for categorical data, diagnosis vs SRS077502_20.hgm
+2022-08-10 11:14:33 INFO::Creating boxplot for categorical data, diagnosis vs X927665.4.patric
+2022-08-10 11:14:33 INFO::Creating boxplot for categorical data, diagnosis vs ERS537369_59.hgm
+2022-08-10 11:14:33 INFO::Creating boxplot for categorical data, diagnosis vs SRS295012_18.hgm
+2022-08-10 11:14:34 INFO::Creating boxplot for categorical data, diagnosis vs SRS294956_23.hgm
+2022-08-10 11:14:34 INFO::Creating boxplot for categorical data, diagnosis vs SRS1596800_42.hgm
+2022-08-10 11:14:34 INFO::Creating boxplot for categorical data, diagnosis vs ERS537233_63.hgm
+2022-08-10 11:14:34 INFO::Creating boxplot for categorical data, diagnosis vs ERS537369_59.hgm
+2022-08-10 11:14:34 INFO::Creating boxplot for categorical data, diagnosis vs ERS537233_63.hgm
+2022-08-10 11:14:34 INFO::Creating boxplot for categorical data, diagnosis vs SRS1735456_15.hgm
+2022-08-10 11:14:34 INFO::Creating boxplot for categorical data, diagnosis vs X1297617.4.patric
+2022-08-10 11:14:35 INFO::Creating boxplot for categorical data, diagnosis vs X1263072.3.patric
+2022-08-10 11:14:35 INFO::Creating boxplot for categorical data, diagnosis vs X483215.6.patric
+2022-08-10 11:14:35 INFO::Creating boxplot for categorical data, diagnosis vs SRS1735456_15.hgm
+2022-08-10 11:14:35 INFO::Creating boxplot for categorical data, diagnosis vs SRS820594_22.hgm
+2022-08-10 11:14:35 INFO::Creating boxplot for categorical data, diagnosis vs ERS537229_8.hgm
+2022-08-10 11:14:35 INFO::Creating boxplot for categorical data, diagnosis vs X2654588179.img
+2022-08-10 11:14:35 INFO::Creating boxplot for categorical data, diagnosis vs SRS075878_45.hgm
+2022-08-10 11:14:35 INFO::Creating boxplot for categorical data, diagnosis vs ERS608550_64.hgm
+2022-08-10 11:14:35 INFO::Creating boxplot for categorical data, diagnosis vs X1262992.3.patric
+2022-08-10 11:14:36 INFO::Creating boxplot for categorical data, diagnosis vs ERS631833_15.hgm
+2022-08-10 11:14:36 INFO::Creating boxplot for categorical data, diagnosis vs ERS537188_55.hgm
+2022-08-10 11:14:36 INFO::Creating boxplot for categorical data, diagnosis vs X1263107.3.patric
+2022-08-10 11:14:36 INFO::Creating boxplot for categorical data, diagnosis vs ERS537219_61.hgm
+2022-08-10 11:14:36 INFO::Creating boxplot for categorical data, diagnosis vs SRS076929_37.hgm
+2022-08-10 11:14:36 INFO::Creating boxplot for categorical data, diagnosis vs X2562617057.img
+2022-08-10 11:14:36 INFO::Creating boxplot for categorical data, diagnosis vs X1263073.3.patric
+2022-08-10 11:14:37 INFO::Creating boxplot for categorical data, diagnosis vs SRS294956_23.hgm
+2022-08-10 11:14:37 INFO::Creating boxplot for categorical data, diagnosis vs ERS537219_61.hgm
+2022-08-10 11:14:37 INFO::Creating boxplot for categorical data, diagnosis vs ERS608493_46.hgm
+2022-08-10 11:14:37 INFO::Creating boxplot for categorical data, diagnosis vs X1236512.3.patric
+2022-08-10 11:14:37 INFO::Creating boxplot for categorical data, diagnosis vs SRS015663_20.hgm
+2022-08-10 11:14:37 INFO::Creating boxplot for categorical data, diagnosis vs SRS142712_3.hgm
+2022-08-10 11:14:37 INFO::Creating boxplot for categorical data, diagnosis vs SRS021219_12.hgm
+2022-08-10 11:14:37 INFO::Creating boxplot for categorical data, diagnosis vs SRS076929_37.hgm
+2022-08-10 11:14:38 INFO::Creating boxplot for categorical data, diagnosis vs ERS537293_53.hgm
+2022-08-10 11:14:38 INFO::Creating boxplot for categorical data, diagnosis vs X1073375.3.patric
+2022-08-10 11:14:38 INFO::Creating boxplot for categorical data, diagnosis vs ERS608530_15.hgm
+2022-08-10 11:14:38 INFO::Creating boxplot for categorical data, diagnosis vs SRS294930_28.hgm
+2022-08-10 11:14:38 INFO::Creating boxplot for categorical data, diagnosis vs X1432052.9.patric
+2022-08-10 11:14:38 INFO::Creating boxplot for categorical data, diagnosis vs X1263105.3.patric
+2022-08-10 11:14:38 INFO::Creating boxplot for categorical data, diagnosis vs X1236512.3.patric
+2022-08-10 11:14:38 INFO::Creating boxplot for categorical data, diagnosis vs ERS537197_59.hgm
+2022-08-10 11:14:39 INFO::Creating boxplot for categorical data, diagnosis vs X649756.4.patric
+2022-08-10 11:14:39 INFO::Creating boxplot for categorical data, diagnosis vs X457421.5.patric
+2022-08-10 11:14:39 INFO::Creating boxplot for categorical data, diagnosis vs X46503.4.patric
+2022-08-10 11:14:39 INFO::Creating boxplot for categorical data, diagnosis vs SRS1596807_67.hgm
+2022-08-10 11:14:39 INFO::Creating boxplot for categorical data, diagnosis vs SRS1596807_67.hgm
+2022-08-10 11:14:39 INFO::Creating boxplot for categorical data, diagnosis vs X1263074.4.patric
+2022-08-10 11:14:39 INFO::Creating boxplot for categorical data, diagnosis vs ERS396465_42.hgm
+2022-08-10 11:14:39 INFO::Creating boxplot for categorical data, diagnosis vs SRS294989_46.hgm
+2022-08-10 11:14:40 INFO::Creating boxplot for categorical data, diagnosis vs ERS631833_15.hgm
+2022-08-10 11:14:40 INFO::Creating boxplot for categorical data, diagnosis vs X1650661.3.patric
+2022-08-10 11:14:40 INFO::Creating boxplot for categorical data, diagnosis vs X39488.4.patric
+2022-08-10 11:14:40 INFO::Creating boxplot for categorical data, diagnosis vs ERS537292_27.hgm
+2022-08-10 11:14:40 INFO::Creating boxplot for categorical data, diagnosis vs SRS476024_18.hgm
+2022-08-10 11:14:40 INFO::Creating boxplot for categorical data, diagnosis vs X1263070.3.patric
+2022-08-10 11:14:40 INFO::Creating boxplot for categorical data, diagnosis vs X59620.13.patric
+2022-08-10 11:14:40 INFO::Creating boxplot for categorical data, diagnosis vs X469591.4.patric
+2022-08-10 11:14:41 INFO::Creating boxplot for categorical data, diagnosis vs X1073375.3.patric
+2022-08-10 11:14:41 INFO::Creating boxplot for categorical data, diagnosis vs ERS396509_31.hgm
+2022-08-10 11:14:41 INFO::Creating boxplot for categorical data, diagnosis vs SRS021219_12.hgm
+2022-08-10 11:14:41 INFO::Creating boxplot for categorical data, diagnosis vs SRS075878_45.hgm
+2022-08-10 11:14:41 INFO::Creating boxplot for categorical data, diagnosis vs X469610.4.patric
+2022-08-10 11:14:41 INFO::Creating boxplot for categorical data, diagnosis vs SRS476023_14.hgm
+2022-08-10 11:14:41 INFO::Creating boxplot for categorical data, diagnosis vs SRS1596798_81.hgm
+2022-08-10 11:14:41 INFO::Creating boxplot for categorical data, diagnosis vs ERS537197_59.hgm
+2022-08-10 11:14:42 INFO::Creating boxplot for categorical data, diagnosis vs ERS537293_53.hgm
+2022-08-10 11:14:42 INFO::Creating boxplot for categorical data, diagnosis vs X702446.3.patric
+2022-08-10 11:14:42 INFO::Creating boxplot for categorical data, diagnosis vs SRS143991_10.hgm
+2022-08-10 11:14:42 INFO::Creating boxplot for categorical data, diagnosis vs X1432052.9.patric
+2022-08-10 11:14:42 INFO::Creating boxplot for categorical data, diagnosis vs SRS142712_3.hgm
+2022-08-10 11:14:42 INFO::Creating boxplot for categorical data, diagnosis vs ERS537252_4.hgm
+2022-08-10 11:14:43 INFO::Creating boxplot for categorical data, diagnosis vs ERS537194_38.hgm
+2022-08-10 11:14:43 INFO::Creating boxplot for categorical data, diagnosis vs SRS332210_5.hgm
+2022-08-10 11:14:43 INFO::Creating boxplot for categorical data, diagnosis vs ERS396436_36.hgm
+2022-08-10 11:14:43 INFO::Creating boxplot for categorical data, diagnosis vs X999410.3.patric
+2022-08-10 11:14:43 INFO::Creating boxplot for categorical data, diagnosis vs X46503.4.patric
+2022-08-10 11:14:43 INFO::Creating boxplot for categorical data, diagnosis vs X1697787.3.patric
+2022-08-10 11:14:43 INFO::Creating boxplot for categorical data, diagnosis vs SRS1596800_42.hgm
+2022-08-10 11:14:43 INFO::Creating boxplot for categorical data, diagnosis vs ERS235564_44.hgm
+2022-08-10 11:14:44 INFO::Creating boxplot for categorical data, diagnosis vs SRS1596798_70.hgm
+2022-08-10 11:14:44 INFO::Creating boxplot for categorical data, diagnosis vs X765821.8.patric
+2022-08-10 11:14:44 INFO::Creating boxplot for categorical data, diagnosis vs X1262889.3.patric
+2022-08-10 11:14:44 INFO::Creating boxplot for categorical data, diagnosis vs SRS1735557_8.hgm
+2022-08-10 11:14:44 INFO::Creating boxplot for categorical data, diagnosis vs ERS537292_27.hgm
+2022-08-10 11:14:44 INFO::Creating boxplot for categorical data, diagnosis vs ERS537194_38.hgm
+2022-08-10 11:14:44 INFO::Creating boxplot for categorical data, diagnosis vs ERS608493_46.hgm
+2022-08-10 11:14:44 INFO::Creating boxplot for categorical data, diagnosis vs X1263107.3.patric
+2022-08-10 11:14:45 INFO::Creating boxplot for categorical data, diagnosis vs X1297617.4.patric
+2022-08-10 11:14:45 INFO::Creating boxplot for categorical data, diagnosis vs ERS608606_84.hgm
+2022-08-10 11:14:47 INFO::Plotting data for metadata number 2, age
+2022-08-10 11:14:47 INFO::Creating scatter plot for continuous data, age vs SRS021219_12.hgm
+2022-08-10 11:14:47 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:47 INFO::Creating scatter plot for continuous data, age vs ERS608606_84.hgm
+2022-08-10 11:14:47 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:47 INFO::Creating scatter plot for continuous data, age vs X1262754.3.patric
+2022-08-10 11:14:47 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:47 INFO::Creating scatter plot for continuous data, age vs X927665.4.patric
+2022-08-10 11:14:47 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:47 INFO::Creating scatter plot for continuous data, age vs X649756.4.patric
+2022-08-10 11:14:47 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:47 INFO::Creating scatter plot for continuous data, age vs X742821.3.patric
+2022-08-10 11:14:48 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:48 INFO::Creating scatter plot for continuous data, age vs X469591.4.patric
+2022-08-10 11:14:48 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:48 INFO::Creating scatter plot for continuous data, age vs X1650661.3.patric
+2022-08-10 11:14:48 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:48 INFO::Creating scatter plot for continuous data, age vs ERS537221_53.hgm
+2022-08-10 11:14:48 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:48 INFO::Creating scatter plot for continuous data, age vs ERS537240_18.hgm
+2022-08-10 11:14:48 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:48 INFO::Creating scatter plot for continuous data, age vs ERS473331_31.hgm
+2022-08-10 11:14:48 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:48 INFO::Creating scatter plot for continuous data, age vs SRS077502_20.hgm
+2022-08-10 11:14:48 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:48 INFO::Creating scatter plot for continuous data, age vs SRS049402_2.hgm
+2022-08-10 11:14:48 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:48 INFO::Creating scatter plot for continuous data, age vs X1432052.9.patric
+2022-08-10 11:14:48 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:48 INFO::Creating scatter plot for continuous data, age vs ERS608550_64.hgm
+2022-08-10 11:14:49 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:49 INFO::Creating scatter plot for continuous data, age vs SRS1596798_70.hgm
+2022-08-10 11:14:49 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:49 INFO::Creating scatter plot for continuous data, age vs SRS050752_17.hgm
+2022-08-10 11:14:49 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:49 INFO::Creating scatter plot for continuous data, age vs ERS396436_36.hgm
+2022-08-10 11:14:49 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:49 INFO::Creating scatter plot for continuous data, age vs SRS311548_12.hgm
+2022-08-10 11:14:49 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:49 INFO::Creating scatter plot for continuous data, age vs ERS537293_53.hgm
+2022-08-10 11:14:49 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:49 INFO::Creating scatter plot for continuous data, age vs SRS1735456_15.hgm
+2022-08-10 11:14:49 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:49 INFO::Creating scatter plot for continuous data, age vs X28116.19.patric
+2022-08-10 11:14:49 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:49 INFO::Creating scatter plot for continuous data, age vs X1073375.3.patric
+2022-08-10 11:14:50 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:50 INFO::Creating scatter plot for continuous data, age vs ERS537194_38.hgm
+2022-08-10 11:14:50 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:50 INFO::Creating scatter plot for continuous data, age vs ERS537252_4.hgm
+2022-08-10 11:14:50 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:50 INFO::Creating scatter plot for continuous data, age vs SRS294989_46.hgm
+2022-08-10 11:14:50 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:50 INFO::Creating scatter plot for continuous data, age vs SRS476023_14.hgm
+2022-08-10 11:14:50 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:50 INFO::Creating scatter plot for continuous data, age vs X59620.24.patric
+2022-08-10 11:14:50 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:50 INFO::Creating scatter plot for continuous data, age vs X1263070.3.patric
+2022-08-10 11:14:50 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:50 INFO::Creating scatter plot for continuous data, age vs SRS076929_37.hgm
+2022-08-10 11:14:50 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:50 INFO::Creating scatter plot for continuous data, age vs X2562617057.img
+2022-08-10 11:14:51 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:51 INFO::Creating scatter plot for continuous data, age vs X1262947.3.patric
+2022-08-10 11:14:51 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:51 INFO::Creating scatter plot for continuous data, age vs ERS537188_55.hgm
+2022-08-10 11:14:51 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:51 INFO::Creating scatter plot for continuous data, age vs ERS473180_17.hgm
+2022-08-10 11:14:51 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:51 INFO::Creating scatter plot for continuous data, age vs X246787.5.patric
+2022-08-10 11:14:51 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:51 INFO::Creating scatter plot for continuous data, age vs SRS1719444_21.hgm
+2022-08-10 11:14:51 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:51 INFO::Creating scatter plot for continuous data, age vs ERS396509_31.hgm
+2022-08-10 11:14:51 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:51 INFO::Creating scatter plot for continuous data, age vs X657309.4.patric
+2022-08-10 11:14:51 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:51 INFO::Creating scatter plot for continuous data, age vs X349741.6.patric
+2022-08-10 11:14:52 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:52 INFO::Creating scatter plot for continuous data, age vs X1263072.3.patric
+2022-08-10 11:14:52 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:52 INFO::Creating scatter plot for continuous data, age vs ERS631833_15.hgm
+2022-08-10 11:14:52 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:52 INFO::Creating scatter plot for continuous data, age vs X2654588179.img
+2022-08-10 11:14:52 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:52 INFO::Creating scatter plot for continuous data, age vs SRS475693_1.hgm
+2022-08-10 11:14:52 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:52 INFO::Creating scatter plot for continuous data, age vs SRS332210_5.hgm
+2022-08-10 11:14:52 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:52 INFO::Creating scatter plot for continuous data, age vs X765821.8.patric
+2022-08-10 11:14:52 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:52 INFO::Creating scatter plot for continuous data, age vs ERS396406_17.hgm
+2022-08-10 11:14:52 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:52 INFO::Creating scatter plot for continuous data, age vs ERS235564_44.hgm
+2022-08-10 11:14:53 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:53 INFO::Creating scatter plot for continuous data, age vs SRS020233_5.hgm
+2022-08-10 11:14:53 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:53 INFO::Creating scatter plot for continuous data, age vs ERS608519_39.hgm
+2022-08-10 11:14:53 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:53 INFO::Creating scatter plot for continuous data, age vs SRS1596798_81.hgm
+2022-08-10 11:14:53 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:53 INFO::Creating scatter plot for continuous data, age vs X702446.3.patric
+2022-08-10 11:14:53 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:53 INFO::Creating scatter plot for continuous data, age vs SRS1596872_171.hgm
+2022-08-10 11:14:53 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:53 INFO::Creating scatter plot for continuous data, age vs X1263074.4.patric
+2022-08-10 11:14:53 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:53 INFO::Creating scatter plot for continuous data, age vs X665951.3.patric
+2022-08-10 11:14:53 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:53 INFO::Creating scatter plot for continuous data, age vs ERS537229_8.hgm
+2022-08-10 11:14:54 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:54 INFO::Creating scatter plot for continuous data, age vs SRS019910_14.hgm
+2022-08-10 11:14:54 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:54 INFO::Creating scatter plot for continuous data, age vs ERS537197_59.hgm
+2022-08-10 11:14:54 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:54 INFO::Creating scatter plot for continuous data, age vs X1262889.3.patric
+2022-08-10 11:14:54 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:54 INFO::Creating scatter plot for continuous data, age vs SRS104400_3.hgm
+2022-08-10 11:14:54 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:54 INFO::Creating scatter plot for continuous data, age vs ERS396493_5.hgm
+2022-08-10 11:14:54 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:54 INFO::Creating scatter plot for continuous data, age vs ERS537247_14.hgm
+2022-08-10 11:14:54 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:54 INFO::Creating scatter plot for continuous data, age vs SRS098061_38.hgm
+2022-08-10 11:14:54 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:54 INFO::Creating scatter plot for continuous data, age vs ERS235560_81.hgm
+2022-08-10 11:14:55 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:55 INFO::Creating scatter plot for continuous data, age vs X765821.5.patric
+2022-08-10 11:14:55 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:55 INFO::Creating scatter plot for continuous data, age vs SRS1596807_67.hgm
+2022-08-10 11:14:55 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:55 INFO::Creating scatter plot for continuous data, age vs ERS473051_14.hgm
+2022-08-10 11:14:55 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:55 INFO::Creating scatter plot for continuous data, age vs X39488.4.patric
+2022-08-10 11:14:55 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:55 INFO::Creating scatter plot for continuous data, age vs SRS294930_28.hgm
+2022-08-10 11:14:55 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:55 INFO::Creating scatter plot for continuous data, age vs SRS050026_15.hgm
+2022-08-10 11:14:55 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:55 INFO::Creating scatter plot for continuous data, age vs SRS372948_2.hgm
+2022-08-10 11:14:55 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:55 INFO::Creating scatter plot for continuous data, age vs X1263107.3.patric
+2022-08-10 11:14:56 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:56 INFO::Creating scatter plot for continuous data, age vs SRS1719567_3.hgm
+2022-08-10 11:14:56 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:56 INFO::Creating scatter plot for continuous data, age vs SRS1596800_42.hgm
+2022-08-10 11:14:56 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:56 INFO::Creating scatter plot for continuous data, age vs ERS396428_22.hgm
+2022-08-10 11:14:56 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:56 INFO::Creating scatter plot for continuous data, age vs SRS142712_3.hgm
+2022-08-10 11:14:56 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:56 INFO::Creating scatter plot for continuous data, age vs X46503.4.patric
+2022-08-10 11:14:56 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:56 INFO::Creating scatter plot for continuous data, age vs SRS077849_38.hgm
+2022-08-10 11:14:56 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:56 INFO::Creating scatter plot for continuous data, age vs X1263073.3.patric
+2022-08-10 11:14:56 DEBUG::`geom_smooth()` using formula 'y ~ x'
+2022-08-10 11:14:58 INFO::Plotting data for metadata number 3, antibiotics
+2022-08-10 11:14:58 INFO::Creating boxplot for categorical data, antibiotics vs ERS396406_17.hgm
+2022-08-10 11:14:58 INFO::Creating boxplot for categorical data, antibiotics vs X1263072.3.patric
+2022-08-10 11:14:58 INFO::Creating boxplot for categorical data, antibiotics vs X1263105.3.patric
+2022-08-10 11:14:59 INFO::Creating boxplot for categorical data, antibiotics vs SRS104400_3.hgm
+2022-08-10 11:14:59 INFO::Creating boxplot for categorical data, antibiotics vs SRS142712_3.hgm
+2022-08-10 11:14:59 INFO::Creating boxplot for categorical data, antibiotics vs ERS537219_61.hgm
+2022-08-10 11:14:59 INFO::Creating boxplot for categorical data, antibiotics vs ERS537240_18.hgm
+2022-08-10 11:14:59 INFO::Creating boxplot for categorical data, antibiotics vs SRS1735557_8.hgm
+2022-08-10 11:14:59 INFO::Creating boxplot for categorical data, antibiotics vs ERS473122_41.hgm
+2022-08-10 11:14:59 INFO::Creating boxplot for categorical data, antibiotics vs SRS075878_45.hgm
+2022-08-10 11:14:59 INFO::Creating boxplot for categorical data, antibiotics vs ERS396436_36.hgm
+2022-08-10 11:15:00 INFO::Creating boxplot for categorical data, antibiotics vs SRS098061_38.hgm
+2022-08-10 11:15:00 INFO::Creating boxplot for categorical data, antibiotics vs X1262889.3.patric
+2022-08-10 11:15:00 INFO::Creating boxplot for categorical data, antibiotics vs ERS537293_53.hgm
+2022-08-10 11:15:00 INFO::Creating boxplot for categorical data, antibiotics vs ERS608519_39.hgm
+2022-08-10 11:15:00 INFO::Creating boxplot for categorical data, antibiotics vs SRS077552_27.hgm
+2022-08-10 11:15:00 INFO::Creating boxplot for categorical data, antibiotics vs ERS396509_31.hgm
+2022-08-10 11:15:00 INFO::Creating boxplot for categorical data, antibiotics vs SRS077849_38.hgm
+2022-08-10 11:15:00 INFO::Creating boxplot for categorical data, antibiotics vs X1897011.3.patric
+2022-08-10 11:15:01 INFO::Creating boxplot for categorical data, antibiotics vs X349741.6.patric
+2022-08-10 11:15:01 INFO::Creating boxplot for categorical data, antibiotics vs SRS1596807_67.hgm
+2022-08-10 11:15:01 INFO::Creating boxplot for categorical data, antibiotics vs X665951.3.patric
+2022-08-10 11:15:01 INFO::Creating boxplot for categorical data, antibiotics vs SRS077502_20.hgm
+2022-08-10 11:15:01 INFO::Creating boxplot for categorical data, antibiotics vs ERS537229_8.hgm
+2022-08-10 11:15:01 INFO::Creating boxplot for categorical data, antibiotics vs SRS049402_2.hgm
+2022-08-10 11:15:01 INFO::Creating boxplot for categorical data, antibiotics vs SRS475693_1.hgm
+2022-08-10 11:15:01 INFO::Creating boxplot for categorical data, antibiotics vs SRS295012_18.hgm
+2022-08-10 11:15:01 INFO::Creating boxplot for categorical data, antibiotics vs SRS1719444_21.hgm
+2022-08-10 11:15:02 INFO::Creating boxplot for categorical data, antibiotics vs X1650661.3.patric
+2022-08-10 11:15:02 INFO::Creating boxplot for categorical data, antibiotics vs SRS017307_13.hgm
+2022-08-10 11:15:02 INFO::Creating boxplot for categorical data, antibiotics vs X469610.4.patric
+2022-08-10 11:15:02 INFO::Creating boxplot for categorical data, antibiotics vs ERS396428_22.hgm
+2022-08-10 11:15:02 INFO::Creating boxplot for categorical data, antibiotics vs SRS1735679_4.hgm
+2022-08-10 11:15:02 INFO::Creating boxplot for categorical data, antibiotics vs SRS332210_5.hgm
+2022-08-10 11:15:02 INFO::Creating boxplot for categorical data, antibiotics vs X765821.8.patric
+2022-08-10 11:15:02 INFO::Creating boxplot for categorical data, antibiotics vs X1432052.9.patric
+2022-08-10 11:15:03 INFO::Creating boxplot for categorical data, antibiotics vs SRS1596800_42.hgm
+2022-08-10 11:15:03 INFO::Creating boxplot for categorical data, antibiotics vs SRS144714_48.hgm
+2022-08-10 11:15:03 INFO::Creating boxplot for categorical data, antibiotics vs X246787.5.patric
+2022-08-10 11:15:03 INFO::Creating boxplot for categorical data, antibiotics vs SRS294956_23.hgm
+2022-08-10 11:15:03 INFO::Creating boxplot for categorical data, antibiotics vs ERS537233_63.hgm
+2022-08-10 11:15:03 INFO::Creating boxplot for categorical data, antibiotics vs X1297617.4.patric
+2022-08-10 11:15:03 INFO::Creating boxplot for categorical data, antibiotics vs X28116.19.patric
+2022-08-10 11:15:03 INFO::Creating boxplot for categorical data, antibiotics vs ERS473051_14.hgm
+2022-08-10 11:15:04 INFO::Creating boxplot for categorical data, antibiotics vs X59620.24.patric
+2022-08-10 11:15:04 INFO::Creating boxplot for categorical data, antibiotics vs ERS537292_27.hgm
+2022-08-10 11:15:04 INFO::Creating boxplot for categorical data, antibiotics vs SRS1596798_70.hgm
+2022-08-10 11:15:04 INFO::Creating boxplot for categorical data, antibiotics vs X208479.8.patric
+2022-08-10 11:15:04 INFO::Creating boxplot for categorical data, antibiotics vs SRS476024_18.hgm
+2022-08-10 11:15:04 INFO::Creating boxplot for categorical data, antibiotics vs SRS1596849_88.hgm
+2022-08-10 11:15:04 INFO::Creating boxplot for categorical data, antibiotics vs SRS076929_37.hgm
+2022-08-10 11:15:04 INFO::Creating boxplot for categorical data, antibiotics vs X1262947.3.patric
+2022-08-10 11:15:04 INFO::Creating boxplot for categorical data, antibiotics vs X2562617183.img
+2022-08-10 11:15:05 INFO::Creating boxplot for categorical data, antibiotics vs X59620.13.patric
+2022-08-10 11:15:05 INFO::Creating boxplot for categorical data, antibiotics vs ERS537188_55.hgm
+2022-08-10 11:15:05 INFO::Creating boxplot for categorical data, antibiotics vs X469591.4.patric
+2022-08-10 11:15:05 INFO::Creating boxplot for categorical data, antibiotics vs ERS396465_42.hgm
+2022-08-10 11:15:05 INFO::Creating boxplot for categorical data, antibiotics vs SRS294989_46.hgm
+2022-08-10 11:15:05 INFO::Creating boxplot for categorical data, antibiotics vs ERS473180_17.hgm
+2022-08-10 11:15:05 INFO::Creating boxplot for categorical data, antibiotics vs X1263107.3.patric
+2022-08-10 11:15:05 INFO::Creating boxplot for categorical data, antibiotics vs X483215.6.patric
+2022-08-10 11:15:06 INFO::Creating boxplot for categorical data, antibiotics vs ERS537183_49.hgm
+2022-08-10 11:15:06 INFO::Creating boxplot for categorical data, antibiotics vs SRS098717_4.hgm
+2022-08-10 11:15:06 INFO::Creating boxplot for categorical data, antibiotics vs SRS019910_14.hgm
+2022-08-10 11:15:06 INFO::Creating boxplot for categorical data, antibiotics vs X1952006.3.patric
+2022-08-10 11:15:06 INFO::Creating boxplot for categorical data, antibiotics vs ERS608550_64.hgm
+2022-08-10 11:15:06 INFO::Creating boxplot for categorical data, antibiotics vs ERS537180_31.hgm
+2022-08-10 11:15:06 INFO::Creating boxplot for categorical data, antibiotics vs X445970.5.patric
+2022-08-10 11:15:06 INFO::Creating boxplot for categorical data, antibiotics vs SRS143991_10.hgm
+2022-08-10 11:15:06 INFO::Creating boxplot for categorical data, antibiotics vs X649756.4.patric
+2022-08-10 11:15:07 INFO::Creating boxplot for categorical data, antibiotics vs SRS373206_4.hgm
+2022-08-10 11:15:07 INFO::Creating boxplot for categorical data, antibiotics vs ERS537194_38.hgm
